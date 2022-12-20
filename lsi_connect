@@ -1,0 +1,56 @@
+#!/bin/bash
+
+Help()
+{
+	echo "Syntax: lsi_commands [COMMAND]";
+	echo "options:";
+	echo "Commands avaible:";
+	echo "vpn           Connect to VPN using OpenVPN";
+	echo "bridge        Make connection with server and PC";
+	echo "terminal      Access the terminal on server";
+    echo "copy          Copy local files to server";
+	echo
+
+	echo "Positional arguments: ";
+	echo "lsi_commands --bridge [INPUT] [OUTPUT]";
+	echo "lsi_commands --copy   [FILE]  [PATH]";
+}
+
+
+USER="lucas";
+IP_SERVER="";
+GATE=122;
+PATH_TO_FILE_CONFIG=;
+
+
+while test $# -gt 0 
+    do
+        case $1 in 
+            -h | --help)
+                Help
+                ;;
+			--vpn)
+			/usr/bin/sudo /usr/sbin/openvpn --config $PATH_TO_FILE_CONFIG
+			;;
+			-t | --terminal)
+			/usr/bin/ssh $USER@$IP_SERVER -p$GATE
+			;;
+
+			--bridge)
+			if [[($2 != "" && $3 != "")]]; then
+			 	/usr/bin/ssh -N -f -L localhost:$3:localhost:$2 $USER@$IP_SERVER -p$GATE;
+			else
+				echo "Positional arguments: ";
+				echo "lsi_commands --bridge [INPUT] [OUTPUT]";
+			fi
+			;;
+			-c | --copy)
+			/usr/bin/scp -P $GATE $2 $USER@$IP_SERVER:/home/$USER/$3
+			;;
+            ?)
+		        Help
+      		    exit 1 ;;
+        esac
+        shift
+
+    done
