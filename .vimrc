@@ -140,7 +140,11 @@ au BufRead,BufNewFile *.ts set softtabstop=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let NERDTreeShowHidden=1
+
 :map <F2> :NERDTreeToggle<CR>
 
 :nnoremap <C-Left> :bprevious<CR>
 :nnoremap <C-Right> :bnext<CR>
+:nnoremap <C-z> :undo<CR>
+:nnoremap <C-s> :w<CR>
