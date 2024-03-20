@@ -16,7 +16,7 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'preservim/nerdcommenter'
@@ -26,6 +26,9 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ryanoasis/vim-devicons'
+
+set encoding=UTF-8
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -140,11 +143,21 @@ au BufRead,BufNewFile *.ts set softtabstop=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let NERDTreeShowHidden=1
-
 :map <F2> :NERDTreeToggle<CR>
 
 :nnoremap <C-Left> :bprevious<CR>
 :nnoremap <C-Right> :bnext<CR>
 :nnoremap <C-z> :undo<CR>
 :nnoremap <C-s> :w<CR>
+
+" loading the plugin
+let g:webdevicons_enable = 1
+" adding the flags to NERDTree
+let g:webdevicons_enable_nerdtree = 1
+" adding to vim-airline's tabline
+let g:webdevicons_enable_airline_tabline = 1
+" adding to vim-airline's statusline
+let g:webdevicons_enable_airline_statusline = 1
+" ctrlp glyphs
+let g:webdevicons_enable_ctrlp = 1
+
