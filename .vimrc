@@ -161,3 +161,7 @@ let g:webdevicons_enable_airline_statusline = 1
 " ctrlp glyphs
 let g:webdevicons_enable_ctrlp = 1
 
+nnoremap <S-left> :vertical resize -5<CR>
+nnoremap <S-down> :resize +5<CR>
+nnoremap <S-up> :resize -5<CR>
+nnoremap <S-right> :vertical resize +5<CR>
