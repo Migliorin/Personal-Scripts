@@ -1,0 +1,8 @@
+#!/bin/bash
+
+CONFIG_FILE="$HOME/.local/share/openvpn/openVPNest.ovpn"
+
+echo "Starting connection with VPN"
+echo "Config file: ${CONFIG_FILE}"
+
+$(which openvpn3) session-start --config $CONFIG_FILE
