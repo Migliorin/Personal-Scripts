@@ -1,3 +1,4 @@
+# Table of contents
 <!-- vim-markdown-toc GitLab -->
 
 * [VPN and SSH Management Scripts Documentation](#vpn-and-ssh-management-scripts-documentation)
