@@ -90,6 +90,3 @@ The script supports multiple options to perform different tasks. Ensure you have
 - The `USER`, `IP_SERVER`, and `GATE` variables must be set for the script to function properly.
 - Ensure the `ssh` and `scp` commands are installed and available in the system's PATH.
 
----
-
-By following the usage instructions, you can effectively manage VPN connections and perform SSH-related tasks using these scripts.
