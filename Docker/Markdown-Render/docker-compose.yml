@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  grip:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "6419:6419"
+    volumes:
+      - .:/app
+
