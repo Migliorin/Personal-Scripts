@@ -1,0 +1,19 @@
+#!/bin/bash
+
+CONFIG_FILE="$HOME/.local/share/openvpn/openVPNest.ovpn"
+
+case $1 in
+  --connect)
+    echo "Starting connection with VPN"
+    echo "Config file: ${CONFIG_FILE}"
+    $(which openvpn3) session-start --config $CONFIG_FILE
+    ;;
+  --disconnect)
+    echo "Disconnecting from VPN"
+    $(which openvpn3) session-manage --config $CONFIG_FILE --disconnect
+    ;;
+  *)
+    echo "Usage: connect_vpn {--connect|--disconnect}"
+    exit 1
+    ;;
+esac
