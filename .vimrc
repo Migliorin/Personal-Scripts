@@ -27,6 +27,8 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'normen/vim-pio'
+Plugin 'mzlogin/vim-markdown-toc'
 
 set encoding=UTF-8
 
